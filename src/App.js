@@ -1,23 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+
+import {useState} from 'react';
+import {useStore} from './zustand/store.js'
+import GlobalStyle from './styles/Globalstyle';
+import Router from './Router.js';
 
 function App() {
+  const {link,server_link,local_link} = useStore(state => state)
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router/>
+      <GlobalStyle/>
+      <p>{link}</p>
+      <button onClick={local_link}>로컬 링크</button>
+      <button onClick={server_link}>서버 링크</button>
     </div>
   );
 }
