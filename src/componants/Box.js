@@ -26,21 +26,36 @@ height: 100%;
 width: 100%;
 `
 export const Contents_inner =  styled.div`
-  width:80%;
+  min-width:800px;
+  max-width: 1400px;
+  width:70%;
   min-height:92vh;
   height:auto;
+  @media screen and (max-width: 800px) {
+    min-height:92vh;
+    min-width:350px;
+    max-width: 600px;
+    height:auto;
+
+  }
+
 `
 
 
 export const Contents_con =  styled.div`
+  
   width: 100%;
   height:auto;
   display:flex;
   align-items:center;
   flex-direction:column;
+  @media screen and (max-width: 800px) {
+    padding-top:80px;
+    padding-bottom:70px;
+  }
+
+  
 `
-
-
 
 // const Input = styled.input`
 //   padding: 0.5em;
