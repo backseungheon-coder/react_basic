@@ -113,9 +113,7 @@ const Footer_btn_box = styled.div`
 export function Footer(){
     const {link_state,set_home} = useBotlink(state => state)
     
-    useEffect(() => {
-        set_home();
-      }, []); 
+
 
     return(
         <>
@@ -123,14 +121,7 @@ export function Footer(){
             <Foot_inner>
                 <Footer_text_con>
 
-
-
                 <Footer_btn_box><a href="/info">마커누 이용안내</a> <Footer_btn>|</Footer_btn> <a href="/pages/policy">이용약관</a> <Footer_btn>|</Footer_btn> <a href="/pages/privacy">개인정보처리방침</a></Footer_btn_box>
-
-
-
-
-
 
                 <Text_footer_info>(주)네스타전화번호 : 070-7714-1314메일 : marconu@nesta.co.kr대표 : 조은제사업자등록번호:230-87-01450</Text_footer_info>
                     <Text_footer_info>주소 : 경기도 광명시 오리로 362, 607호통신판매업신고 : 2020-경기광명-0459개인정보보호책임자 : 조은제</Text_footer_info>
@@ -141,12 +132,12 @@ export function Footer(){
         </Foot_box>
 
         <Foot_box_m>
-            {[['홈',<Home_icon/>,'home'],['아이템',<List_icon/>,'item'],['마이페이지',<Person_icon/>,'mypage'],['공지사항',<Notice_icon/>,'notice']].map((placement, idx) => {
+            {[['홈',<Home_icon/>,'home','/'],['아이템',<List_icon/>,'item','/item'],['마이페이지',<Person_icon/>,'mypage','/mypage'],['공지사항',<Notice_icon/>,'notice','/notice']].map((placement, idx) => {
                 if(link_state===placement[2]){
                     return(<Button_foot key={idx} primary>{placement[1]}<Home_text >{placement[0]}</Home_text></Button_foot>   );
                 }
                 else{
-                    return(<Button_foot key={idx}>{placement[1]}<Home_text>{placement[0]}</Home_text></Button_foot>   );
+                    return(<Button_foot onClick={() => {document.location.href=placement[3]}} key={idx}>{placement[1]}<Home_text>{placement[0]}</Home_text></Button_foot>   );
                 }
             })}
         </Foot_box_m>

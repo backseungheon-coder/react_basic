@@ -14,11 +14,13 @@ const Nav_box = styled.header`
     border-bottom:1px solid lightgray;
     display:flex;
     justify-content:center;
+    z-index:20;
     @media screen and (max-width: 800px) {
         position: fixed;
         top:0;
         left:0;
         right:0;
+        z-index:20;
     }
 `
 
