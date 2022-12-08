@@ -27,6 +27,7 @@ export function Search_input_from() {
           <Search_icon/>
         </Button>
       </InputGroup>
+        <>ads</>
     </>
   );
 }
