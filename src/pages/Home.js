@@ -47,13 +47,14 @@ display: none;
   width:70%;
   min-width: 380px;
   max-width: 630px;
-  margin-top:30px;
+  margin-top:20px;
   display:flex;
   justify-content:space-between;
 }
 @media screen and (max-width: 380px) {
   min-width: 360px;
   max-width: 630px;
+  margin-top: 10px;
 }
 
 `

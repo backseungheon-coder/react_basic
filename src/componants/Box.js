@@ -33,13 +33,13 @@ export const Contents_inner =  styled.div`
   height:auto;
   @media screen and (max-width: 800px) {
     min-height:92vh;
-    min-width: 380px;
+    min-width: 370px;
     max-width: 630px;
     height:auto;
 
   }
   @media screen and (max-width: 380px) {
-    min-width: 340px;
+    min-width: 330px;
     max-width: 630px;
   }
 
@@ -54,8 +54,8 @@ export const Contents_con =  styled.div`
   align-items:center;
   flex-direction:column;
   @media screen and (max-width: 800px) {
-    padding-top:80px;
-    padding-bottom:70px;
+    padding-top:70px;
+    padding-bottom:40px;
   }
 
   

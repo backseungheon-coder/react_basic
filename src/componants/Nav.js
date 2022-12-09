@@ -16,6 +16,7 @@ const Nav_box = styled.header`
     justify-content:center;
     z-index:20;
     @media screen and (max-width: 800px) {
+        height:60px;
         position: fixed;
         top:0;
         left:0;
@@ -33,12 +34,12 @@ const Navigation = styled.nav`
     display:flex;
     @media screen and (max-width: 800px) {
         height:100%;
-        min-width: 380px;
+        min-width: 370px;
         max-width: 630px;
         display:flex;
     }
     @media screen and (max-width: 380px) {
-        min-width: 360px;
+        min-width: 330px;
         max-width: 630px;
       }
 `

@@ -9,7 +9,7 @@ export default function About(){
   },[]);
     return (
         <>
-            공지사항이 들어갈 페이지
+            공지사항..
         </>
     );
   };

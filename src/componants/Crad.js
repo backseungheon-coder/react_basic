@@ -12,16 +12,17 @@ import thum6 from '../src/thumnail/thum6.jpg'
 import thum7 from '../src/thumnail/thum7.jpg'
 import thum8 from '../src/thumnail/thum8.jpg'
 import thum9 from '../src/thumnail/thum9.jpg'
+import {array,array_main} from '../data/List_data'
 
-const Img_con= styled.div`
+const Img_con= styled.a`
     // background-color:gray;
-    width:90%;
+    width:100%;
     height: 380px;
     display:flex;
     justify-content:center;
+    text-decoration: none;
     @media screen and (max-width: 800px) {
     height: 120px;
-        
     }
 `
 
@@ -96,6 +97,7 @@ const Text_mid = styled.div`
     font-size:18px;
     padding-left:6px;
     padding-right:6px;
+    color:black;
     @media screen and (max-width: 800px) {
         padding-top:0;
         font-size:16px;  
@@ -117,6 +119,7 @@ const Text_bot = styled.div`
     align-items:center;
     padding-left:6px;
     padding-right:6px;
+    color:black;
     @media screen and (max-width: 800px) {
         padding-top:0;
         font-size:14px;     
@@ -129,24 +132,27 @@ const Text_bot = styled.div`
 
 
 // var list = [['홈',<Home_icon/>,'home','/'],['아이템',<List_icon/>,'item','/item'],['마이페이지',<Person_icon/>,'mypage','/mypage'],['공지사항',<Notice_icon/>,'notice','/notice']]
-var list = [[thum1,'[경정청구] 최근 5년 지급한 세금 환급'],[thum2,`네이버 플랫폼, '네이버주문' 가맹점 유치 영업`],[thum3,`전기요금 절감 컨설팅 솔루션(소개)`],[thum4,`초음파 식기세척기(업소용)`],[thum5,`국내/국회 규격인증(KC인증등)`],[thum6,`[코로나19 확산방지]안심콜 출입관리 서비스`],[thum7,`[코로나19 필수아이템] 전자출입명부용 테블릿 + 스탠드형...`],[thum8,`코로나19 방역 항바이러스/향균 표면코팅`],[thum9,`[제품] 천연유래성분 구강청결제 더콘가글`]]
+// var list = [[thum1,'[경정청구] 최근 5년 지급한 세금 환급','1'],[thum2,`네이버 플랫폼, '네이버주문' 가맹점 유치 영업`,'2'],[thum3,`전기요금 절감 컨설팅 솔루션(소개)`,'3'],[thum4,`초음파 식기세척기(업소용)`,'4'],[thum5,`국내/국회 규격인증(KC인증등)`,'5'],[thum6,`[코로나19 확산방지]안심콜 출입관리 서비스`,'6'],[thum7,`[코로나19 필수아이템] 전자출입명부용 테블릿 + 스탠드형...`,'7'],[thum8,`코로나19 방역 항바이러스/향균 표면코팅`,'8'],[thum9,`[제품] 천연유래성분 구강청결제 더콘가글`,'9']]
 
 
-var list = [[thum1,'[경정청구] 최근 5년 지급한 세금 환급'],[thum3,`전기요금 절감 컨설팅 솔루션(소개)`],[thum4,`초음파 식기세척기(업소용)`],[thum5,`국내/국회 규격인증(KC인증등)`],[thum6,`[코로나19 확산방지]안심콜 출입관리 서비스`],[thum7,`[코로나19 필수아이템] 전자출입명부용... `],[thum8,`코로나19 방역 항바이러스/향균 표면코팅`],[thum9,`[제품] 천연유래성분 구강청결제 더콘가글`]]
+var list1 = [[thum1,'[경정청구] 최근 5년 지급한 세금 환급'],[thum3,`전기요금 절감 컨설팅 솔루션(소개)`],[thum4,`초음파 식기세척기(업소용)`],[thum5,`국내/국회 규격인증(KC인증등)`],[thum6,`[코로나19 확산방지]안심콜 출입관리 서비스`],[thum7,`[코로나19 필수아이템] 전자출입명부용... `],[thum8,`코로나19 방역 항바이러스/향균 표면코팅`],[thum9,`[제품] 천연유래성분 구강청결제 더콘가글`]]
+
+
 
 export default function Basic_Card() {
+    
   return (
     <Row xs={1} md={4} className="g-4">
-      {list.map((thum, idx) => (
+      {array.map((thum, idx) => (
         <Col key={idx}>
-            <Img_con>
+            <Img_con href={`/item/${thum.id}`}>
                 <Img_inner>
-                    <Img_box src={thum[0]}>
+                    <Img_box src={thum.src}>
 
                     </Img_box>
                     <Img_info>
                         <Text_header><Cate_div>프리마케터</Cate_div></Text_header>
-                        <Text_mid>{thum[1]}</Text_mid>
+                        <Text_mid>{thum.title}</Text_mid>
                         <Text_bot>판매 금액의 20% 부터</Text_bot>
                     </Img_info>
                 </Img_inner>
@@ -162,24 +168,24 @@ export default function Basic_Card() {
 export function Card_main() {
     return (
         <Row xs={1} md={4} className="g-4">
-          {list.map((thum, idx) => (
-            <Col key={idx}>
-                <Img_con>
-                    <Img_inner>
-                        <Img_box src={thum[0]}>
-    
-                        </Img_box>
-                        <Img_info>
-                            <Text_header><Cate_div>프리마케터</Cate_div></Text_header>
-                            <Text_mid>{thum[1]}</Text_mid>
-                            <Text_bot>판매 금액의 20% 부터</Text_bot>
-                        </Img_info>
-                    </Img_inner>
-                </Img_con>
-    
-            </Col>
-          ))}
-        </Row>
+        {array_main.map((thum, idx) => (
+          <Col key={idx}>
+              <Img_con href={`/item/${thum.id}`}>
+                  <Img_inner>
+                      <Img_box src={thum.src}>
+  
+                      </Img_box>
+                      <Img_info>
+                          <Text_header><Cate_div>프리마케터</Cate_div></Text_header>
+                          <Text_mid>{thum.title}</Text_mid>
+                          <Text_bot>판매 금액의 20% 부터</Text_bot>
+                      </Img_info>
+                  </Img_inner>
+              </Img_con>
+  
+          </Col>
+        ))}
+      </Row>
       );
 
 }

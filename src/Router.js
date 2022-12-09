@@ -5,7 +5,7 @@ import Home from './pages/Home.js'
 import Items from './pages/Items.js'
 import Mypage from './pages/Mypage.js'
 import Notice from './pages/Notice'
-
+import Detail from './pages/Detail'
 
 import {Basic_button,Outline_button} from './componants/Button';
 import {Box,Basic_con,Contents_con,Contents_inner} from './componants/Box';
@@ -49,6 +49,7 @@ const Router = () => {
                 <Route path="/item" element={<Items/>} />
                 <Route path="/mypage" element={<Mypage/>} />
                 <Route path="/notice" element={<Notice/>} />
+                <Route path="/item/:postId" element={<Detail/>} />
             </Routes>
 
             <Footer_m/>
