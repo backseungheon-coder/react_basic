@@ -33,8 +33,8 @@ const Navigation = styled.nav`
     display:flex;
     @media screen and (max-width: 800px) {
         height:100%;
-        min-width:350px;
-        max-width: 600px;
+        min-width: 380px;
+        max-width: 630px;
         display:flex;
     }
 `

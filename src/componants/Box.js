@@ -33,8 +33,8 @@ export const Contents_inner =  styled.div`
   height:auto;
   @media screen and (max-width: 800px) {
     min-height:92vh;
-    min-width:350px;
-    max-width: 600px;
+    min-width: 380px;
+    max-width: 630px;
     height:auto;
 
   }
