@@ -37,6 +37,10 @@ const Navigation = styled.nav`
         max-width: 630px;
         display:flex;
     }
+    @media screen and (max-width: 380px) {
+        min-width: 360px;
+        max-width: 630px;
+      }
 `
 
 const Nav_left = styled.li`

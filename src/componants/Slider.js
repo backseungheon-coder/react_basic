@@ -33,6 +33,10 @@ display: none;
   margin-top:30px;
   border-radius:10px;
 }
+@media screen and (max-width: 380px) {
+  min-width: 340px;
+  max-width: 630px;
+}
 `
 
 const Text_dark = styled.h5`

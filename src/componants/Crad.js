@@ -101,6 +101,9 @@ const Text_mid = styled.div`
         font-size:16px;  
         height:40%;   
         }
+    @media screen and (max-width: 380px) {
+            font-size:14px;   
+        }
 `
 
 const Text_bot = styled.div`
@@ -118,6 +121,9 @@ const Text_bot = styled.div`
         padding-top:0;
         font-size:14px;     
     }
+    @media screen and (max-width: 380px) {
+        font-size:12px;   
+      }
 `
 
 
@@ -126,7 +132,7 @@ const Text_bot = styled.div`
 var list = [[thum1,'[경정청구] 최근 5년 지급한 세금 환급'],[thum2,`네이버 플랫폼, '네이버주문' 가맹점 유치 영업`],[thum3,`전기요금 절감 컨설팅 솔루션(소개)`],[thum4,`초음파 식기세척기(업소용)`],[thum5,`국내/국회 규격인증(KC인증등)`],[thum6,`[코로나19 확산방지]안심콜 출입관리 서비스`],[thum7,`[코로나19 필수아이템] 전자출입명부용 테블릿 + 스탠드형...`],[thum8,`코로나19 방역 항바이러스/향균 표면코팅`],[thum9,`[제품] 천연유래성분 구강청결제 더콘가글`]]
 
 
-var list = [[thum1,'[경정청구] 최근 5년 지급한 세금 환급'],[thum3,`전기요금 절감 컨설팅 솔루션(소개)`],[thum4,`초음파 식기세척기(업소용)`],[thum5,`국내/국회 규격인증(KC인증등)`],[thum6,`[코로나19 확산방지]안심콜 출입관리 서비스`],[thum7,`[코로나19 필수아이템] 전자출입명부용 테블릿 + 스탠드형...`],[thum8,`코로나19 방역 항바이러스/향균 표면코팅`],[thum9,`[제품] 천연유래성분 구강청결제 더콘가글`]]
+var list = [[thum1,'[경정청구] 최근 5년 지급한 세금 환급'],[thum3,`전기요금 절감 컨설팅 솔루션(소개)`],[thum4,`초음파 식기세척기(업소용)`],[thum5,`국내/국회 규격인증(KC인증등)`],[thum6,`[코로나19 확산방지]안심콜 출입관리 서비스`],[thum7,`[코로나19 필수아이템] 전자출입명부용... `],[thum8,`코로나19 방역 항바이러스/향균 표면코팅`],[thum9,`[제품] 천연유래성분 구강청결제 더콘가글`]]
 
 export default function Basic_Card() {
   return (

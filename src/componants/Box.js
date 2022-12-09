@@ -38,6 +38,10 @@ export const Contents_inner =  styled.div`
     height:auto;
 
   }
+  @media screen and (max-width: 380px) {
+    min-width: 340px;
+    max-width: 630px;
+  }
 
 `
 

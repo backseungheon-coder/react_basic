@@ -51,6 +51,10 @@ display: none;
   display:flex;
   justify-content:space-between;
 }
+@media screen and (max-width: 380px) {
+  min-width: 360px;
+  max-width: 630px;
+}
 
 `
 
