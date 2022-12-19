@@ -54,7 +54,7 @@ export const Contents_con =  styled.div`
   align-items:center;
   flex-direction:column;
   @media screen and (max-width: 800px) {
-    padding-top:70px;
+    padding-top:60px;
     padding-bottom:40px;
   }
 

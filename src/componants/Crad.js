@@ -13,8 +13,8 @@ import thum7 from '../src/thumnail/thum7.jpg'
 import thum8 from '../src/thumnail/thum8.jpg'
 import thum9 from '../src/thumnail/thum9.jpg'
 import {array,array_main} from '../data/List_data'
-
-const Img_con= styled.a`
+import {Link} from 'react-router-dom'
+const Img_con= styled(Link)`
     // background-color:gray;
     width:100%;
     height: 380px;
@@ -69,7 +69,12 @@ const Cate_div =   styled.div`
     justify-content:center;
     color:#2073bc;
     background-color:#ebf4fc;
-    font-size:15px
+    font-size:15px;
+    @media screen and (max-width: 800px) {
+        font-size:12.6px;   
+        width: 80px;
+        border:1.5px solid #2073bc;
+    }
     
     ;
 `
@@ -86,7 +91,6 @@ const Text_header = styled.div`
         align-items: center;
         height:30%;
         
-            
         }
 `
 
@@ -100,11 +104,11 @@ const Text_mid = styled.div`
     color:black;
     @media screen and (max-width: 800px) {
         padding-top:0;
-        font-size:16px;  
+        font-size:14px;  
         height:40%;   
         }
     @media screen and (max-width: 380px) {
-            font-size:14px;   
+            font-size:12.6px;   
         }
 `
 
@@ -145,7 +149,7 @@ export default function Basic_Card() {
     <Row xs={1} md={4} className="g-4">
       {array.map((thum, idx) => (
         <Col key={idx}>
-            <Img_con href={`/item/${thum.id}`}>
+            <Img_con to={`/item/${thum.id}`}>
                 <Img_inner>
                     <Img_box src={thum.src}>
 
@@ -170,7 +174,7 @@ export function Card_main() {
         <Row xs={1} md={4} className="g-4">
         {array_main.map((thum, idx) => (
           <Col key={idx}>
-              <Img_con href={`/item/${thum.id}`}>
+              <Img_con to={`/item/${thum.id}`}>
                   <Img_inner>
                       <Img_box src={thum.src}>
   

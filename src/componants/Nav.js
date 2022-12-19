@@ -39,7 +39,7 @@ const Navigation = styled.nav`
         display:flex;
     }
     @media screen and (max-width: 380px) {
-        min-width: 330px;
+        min-width: 340px;
         max-width: 630px;
       }
 `
@@ -59,7 +59,10 @@ align-items:center;
 
 const Nav_mid = styled.li`
 height:100%;
-width:60%;
+width:70%;
+display:flex;
+align-items:center;
+justify-content:space-evenly;
 @media screen and (max-width: 800px) {
     display:none;
 }
@@ -68,9 +71,9 @@ width:60%;
 const Nav_right = styled.li`
 display:flex;
 height:100%;
-min-width:20%;
+min-width:10%;
 align-items:center;
-justify-content:space-between;
+justify-content:flex-end;
 @media screen and (max-width: 800px) {
     display:flex;
     height:100%;
@@ -80,7 +83,6 @@ justify-content:space-between;
     justify-content:flex-end;
 }
 `
-
 
 const Logo_img = styled.img`
     min-width:200px;
@@ -128,9 +130,6 @@ const Button_Login = styled.button`
     
     `
 
-
-
-
 const Button_Login_vis = styled.button`
 
     width:100%;
@@ -147,7 +146,6 @@ const Button_Login_vis = styled.button`
 
 
 const Menu_icon = styled(Menu)`
-
   `
 
 const Button_menu = styled.button`
@@ -184,6 +182,16 @@ const Off_ul = styled.ul`
     padding:0;
 `
 
+const Link_style = styled(Link)`
+    font-size:18px;
+    margin:30px;
+    text-decoration:none;
+    color:black;
+    &:hover{
+        color:#2073bc;
+    }
+`
+
 function OffCanvasExample({ name, ...props }) {
     const [show, setShow] = useState(false);
   
@@ -207,6 +215,15 @@ function OffCanvasExample({ name, ...props }) {
                     <li>
                         <Button_Login_vis>회원가입</Button_Login_vis>
                     </li>
+                    <li>
+                        <Button_Login_vis onClick={() => {window.location.href='/item'}}>아이템</Button_Login_vis>
+                    </li>
+                    <li>
+                        <Button_Login_vis onClick={() => {window.location.href='/mypage'}}>마이페이지</Button_Login_vis>
+                    </li>
+                    <li>
+                        <Button_Login_vis onClick={() => {window.location.href='/notice'}}>공지사항</Button_Login_vis>
+                    </li>
                 </Off_ul>
                 <Off_under>
                 <Button_Login_vis onClick={handleClose}>닫기</Button_Login_vis>
@@ -225,15 +242,18 @@ export function Nav(){
         <Nav_box>
                 <Navigation>
                     <Nav_left><Link to={{pathname:`/`}}><Logo_img src={Logo} /></Link></Nav_left>
-                    <Nav_mid></Nav_mid>
-                    <Nav_right>
-                        <Button_Login>로그인</Button_Login>
+                    <Nav_mid>
+                        <Link_style to={'/item'}>아이템</Link_style>
+                        <Link_style to={'/mypage'}>마이페이지</Link_style>
+                        <Link_style to={'/notice'}>공지사항</Link_style>
+                        <Link_style >로그인</Link_style>
+                    </Nav_mid>
+                    <Nav_right>   
                         <Button_Signup>회원가입</Button_Signup>   
                         <OffCanvasExample  placement='end' name='end'/>
                     </Nav_right>
                 </Navigation>
         </Nav_box>
-      
         </>
     )
 }

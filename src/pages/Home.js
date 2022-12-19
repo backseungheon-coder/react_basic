@@ -9,6 +9,7 @@ import {useBotlink} from '../zustand/store.js'
 import Slider_v2 from '../componants/Slider_v2'
 import {PersonSquare} from  '@styled-icons/bootstrap/PersonSquare'
 import {Buildings} from '@styled-icons/boxicons-regular/Buildings'
+import {Link} from 'react-router-dom'
 const Item_inner = styled.div`
   padding-top:50px;
   padding-bottom:50px;
@@ -52,31 +53,44 @@ display: none;
   justify-content:space-between;
 }
 @media screen and (max-width: 380px) {
-  min-width: 360px;
+  min-width: 340px;
   max-width: 630px;
-  margin-top: 10px;
 }
 
 `
 
-const Ai_marketer = styled.div`
+const Ai_marketer = styled(Link)`
+@media screen and (min-width: 800px) {
+  width:44%;
+}
   width:48%;
   height:100%;
   background-color:#e9f0f7;
   border-radius:10px;
   display:flex;
   align-items:center;
+  text-decoration:none;
+  color:black;
   `
-const Ai_Brand = styled.div`
+const Ai_Brand = styled(Link)`
+@media screen and (min-width: 800px) {
+  width:44%;
+}
   width:48%;
   height:100%;
   background-color:#fff9e8;
   border-radius:10px;
   display:flex;
   align-items:center;
+  text-decoration:none;
+  color:black;
   `
 
 const Ai_text = styled.p`
+@media screen and (min-width: 800px) {
+  font-size:24px
+}  
+
   padding:0;
   margin:0;
   font-weight:bold;
@@ -84,6 +98,9 @@ const Ai_text = styled.p`
 `
 
 const Ai_text2 = styled.p`
+@media screen and (min-width: 800px) {
+  font-size:20px
+}
   padding:0;
   margin:0;
   font-size:18px;
@@ -94,7 +111,7 @@ color:#2073bc;
 width:70%;
 `
 const Building = styled(Buildings)`
-width:80%;
+width:70%;
 
 color:#eeb61a;
 `
@@ -110,6 +127,17 @@ function Item_list(){
   )
 }
 
+export function Ai_button_link(){
+  return(
+    <>
+   
+      <Ai_marketer to='/suggest_m'><div style={{display:'flex',justifyContent:'space-evenly',width:'100%',alignItems:'center'}}><div style={{width:'40%',height:'100%',justifyContent:'center',display:'flex',flexDirection:'column'}}><Ai_text style={{color:'#2073bc'}}>마케터</Ai_text><Ai_text2>Ai검색</Ai_text2></div><div style={{width:'40%',display:'flex',justifyContent:'flex-end'}}><Person/></div></div></Ai_marketer>
+      <Ai_Brand to='/suggest_b'><div style={{display:'flex',justifyContent:'space-evenly',width:'100%',alignItems:'center'}}><div style={{width:'40%',height:'100%',justifyContent:'center',display:'flex',flexDirection:'column'}}><Ai_text style={{color:'#eeb61a'}}>브랜드</Ai_text><Ai_text2>Ai검색</Ai_text2></div><div style={{width:'40%',display:'flex',justifyContent:'flex-end'}}><Building/></div></div></Ai_Brand>
+
+    </>
+  )
+}
+
 export default function Home(){
   const {set_home} = useBotlink(state => state)
   
@@ -119,15 +147,14 @@ export default function Home(){
 
     return (
       <>  
-          
           <Slider_v2/>
           <Slider/>
           <Ai_button>
-            <Ai_marketer><div style={{display:'flex',justifyContent:'space-evenly',width:'100%'}}><div style={{width:'40%'}}><Ai_text style={{color:'#2073bc'}}>마케터</Ai_text><Ai_text2>자동추천</Ai_text2></div><div style={{width:'40%',display:'flex',justifyContent:'flex-end'}}><Person/></div></div></Ai_marketer>
-            <Ai_Brand><div style={{display:'flex',justifyContent:'space-evenly',width:'100%'}}><div style={{width:'40%'}}><Ai_text style={{color:'#eeb61a'}}>브랜드</Ai_text><Ai_text2>자동추천</Ai_text2></div><div style={{width:'40%',display:'flex',justifyContent:'flex-end'}}><Building/></div></div></Ai_Brand>
+          <Ai_button_link/>  
           </Ai_button>
           
-            <Contents_inner>
+          
+          <Contents_inner>
               <Item_inner>
                 <Item_header><h1>아이템</h1><a href='/item'>더보기</a></Item_header>
                 <Letter_bot></Letter_bot>

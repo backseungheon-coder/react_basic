@@ -11,6 +11,7 @@ const Footer = styled.div`
         display: flex;
         align-items: center;
         flex-direction:column;
+        margin-bottom:30px;
     }
 `
 const Footer_text_box = styled.div`
@@ -24,6 +25,8 @@ const Footer_text = styled.p`
     font-size:12px;
     margin:0;
 `
+
+
 
 export function AllCollapseExample() {
   return (
@@ -46,8 +49,6 @@ export function AllCollapseExample() {
 
 
 
-
-
 export function Footer_m(){
 
     return(
@@ -59,7 +60,6 @@ export function Footer_m(){
                     <Footer_text>계약사항 등과 관련한 의무와 책임은 거래당사자에게 있습니다.</Footer_text>
                 </Footer_text_box>
                 <AllCollapseExample></AllCollapseExample>
-
             </Footer>
         </>
     )

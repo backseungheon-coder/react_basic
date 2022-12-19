@@ -2,6 +2,8 @@ import React,{useState,useRef,useEffect} from 'react';
 import { BrowserRouter, Routes, Route, Link,Outlet } from 'react-router-dom';
 import styled from 'styled-components';
 import Ai_img from '../src/Ai_img.png'
+import { Ai_button_link } from '../pages/Home';
+
 const Search_con  = styled.div`
     width: 100%;
     height: 100%;
@@ -11,7 +13,7 @@ const Search_con  = styled.div`
     align-items: center;
 `
 
-const Search_button = styled.button`
+const Search_button = styled(Link)`
     height: 60px;
     width: 400px;
     background: none;
@@ -26,6 +28,12 @@ const Search_button = styled.button`
     justify-content: space-between;
     align-items: center;
     background-color:rgba(0, 0, 0, 0.1);
+    text-decoration:none;
+    &:hover{
+        color:lightgray;
+        border: 1px solid lightgray;
+        background-color:rgba(0, 0, 0, 0.3);
+    }
 `
 
 const Search_box = styled.div`
@@ -49,6 +57,13 @@ const Text_market = styled.p`
     }};
     margin-bottom:10px;
     `
+const Button_box = styled.div`
+    width:100%;
+    height: 100px;
+    display:flex;
+    justify-content:space-evenly;
+
+`
 
 function Basic_con(props) {
 
@@ -79,10 +94,10 @@ function Basic_con(props) {
                     {textlist[props.num_state].detail}
                 </Text_market> 
             </Search_box>
-
-            <Search_button>
-                <Image_ai src={Ai_img}/><div style={{width:'80%',display:'flex',justifyContent:'center'}}>인공지능 자동 추천</div><div style={{width:'10%'}}/>
-            </Search_button>
+            <Button_box>
+                <Ai_button_link/>
+            </Button_box>
+            
 
         </Search_con>
     

@@ -6,6 +6,7 @@ import {List} from  '@styled-icons/bootstrap/List'
 import {Person} from '@styled-icons/bootstrap/Person'
 import {Speakerphone} from '@styled-icons/heroicons-outline/Speakerphone'
 import {useBotlink} from '../zustand/store.js'
+import {Link} from 'react-router-dom';
 
 const Foot_box = styled.div`
     background-color:white;
@@ -38,6 +39,7 @@ const Footer_text_con = styled.div`
 const Foot_box_m = styled.footer`
     display:none;
     @media screen and (max-width: 800px) {
+        z-index:20;
         display: flex;
         width:100%;
         justify-content: center;
@@ -52,7 +54,7 @@ const Foot_box_m = styled.footer`
     }
 `
 
-const Button_foot = styled.button`
+const Button_foot = styled(Link)`
 
     border:none;
     width:100%;
@@ -61,6 +63,10 @@ const Button_foot = styled.button`
     margin:0;
     background-color:white;
     color: ${props => props.primary ? "#2073bc" : "gray"};
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    text-decoration: none;
 `
 
 const Home_icon = styled(Home)`
@@ -85,6 +91,8 @@ const Notice_icon = styled(Speakerphone)`
 
 const Home_text = styled.p`
     font-weight: bold;
+    margin:0;
+    
 `
 const Text_footer = styled.p`
     color:gray;
@@ -121,7 +129,7 @@ export function Footer(){
             <Foot_inner>
                 <Footer_text_con>
 
-                <Footer_btn_box><a href="/info">마커누 이용안내</a> <Footer_btn>|</Footer_btn> <a href="/pages/policy">이용약관</a> <Footer_btn>|</Footer_btn> <a href="/pages/privacy">개인정보처리방침</a></Footer_btn_box>
+                <Footer_btn_box><Link to="/Terms" state={{ tab: 'usage' }}>이용안내</Link> <Footer_btn>|</Footer_btn> <Link to="/Terms" state={{ tab: 'terms' }}>이용약관</Link> <Footer_btn>|</Footer_btn> <Link to="/Terms" state={{ tab: 'private' }}>개인정보처리방침</Link></Footer_btn_box>
 
                 <Text_footer_info>(주)네스타전화번호 : 070-7714-1314메일 : marconu@nesta.co.kr대표 : 조은제사업자등록번호:230-87-01450</Text_footer_info>
                     <Text_footer_info>주소 : 경기도 광명시 오리로 362, 607호통신판매업신고 : 2020-경기광명-0459개인정보보호책임자 : 조은제</Text_footer_info>

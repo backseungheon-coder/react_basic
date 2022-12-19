@@ -16,10 +16,13 @@ const Item_search = styled.div`
   flex-direction:column;
   margin-top:20px;
 `
+
+
+
 const Item_inner = styled.div`
   padding-top:50px;
   padding-bottom:50px;
-  height:auto;
+  height:auto; 
   @media screen and (max-width: 800px) {
   padding-top:0;
   padding-bottom:30px;

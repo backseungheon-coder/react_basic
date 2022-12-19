@@ -18,9 +18,6 @@ function App() {
       <Nav/>
       <Router>
       </Router>
-      {/* <p>{link}</p>
-      <button onClick={local_link}>로컬 링크</button>
-      <button onClick={server_link}>서버 링크</button> */}
     </Basic_con>
   );
 }

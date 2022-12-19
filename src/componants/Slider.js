@@ -30,7 +30,7 @@ display: none;
   width:70%;
   min-width: 380px;
   max-width: 630px;
-  margin-top:30px;
+  margin-top:10px;
   border-radius:10px;
 }
 @media screen and (max-width: 380px) {
@@ -38,6 +38,8 @@ display: none;
   max-width: 630px;
 }
 `
+
+
 
 const Text_dark = styled.h5`
   font-weight: bold;
