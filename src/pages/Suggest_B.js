@@ -129,7 +129,7 @@ export default function Suggest_B(){
   const handleSearch = (e) => {
 
     
-    axios.post("http://43.200.140.62/api/smarang/B_get/",                     
+    axios.post("http://43.200.140.62:8000/api/smarang/B_get/",                     
       {                
         "매출액(억)":[String(much)],
         "영업이익(억)":[String(pmmuch)],
