@@ -123,7 +123,7 @@ export default function Suggest_M(){
   const handleSearch = (e) => {
 
     
-    axios.post("/api/smarang/M_get/",           {                
+    axios.post(`${link}/api/smarang/M_get/`,           {                
       "age":[age],
       "career":[String(Number(career1)+Number(career2)+Number(career3))],
       "plat":[plat],

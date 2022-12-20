@@ -1,5 +1,5 @@
 
-import {useBotlink} from '../zustand/store'
+import {useBotlink,useStore} from '../zustand/store'
 import { useLocation } from "react-router-dom";
 import styled from 'styled-components';
 import {Contents_con,Contents_inner} from '../componants/Box'
@@ -113,7 +113,7 @@ return(
 export default function Suggest_B(){
   const [Market_list,setMarket_list] = useState([])
   const {set_none} = useBotlink(state => state)
-
+  const {link} = useStore(state => state)
   const [much,setMuch] = useState('')
   const [pmmuch,setpmuch] = useState('')
   const [credit,setCredit] = useState('')
@@ -129,7 +129,7 @@ export default function Suggest_B(){
   const handleSearch = (e) => {
 
     
-    axios.post("http://43.200.140.62:8000/api/smarang/B_get/",                     
+    axios.post(`${link}/api/smarang/B_get/`,                     
       {                
         "매출액(억)":[String(much)],
         "영업이익(억)":[String(pmmuch)],
