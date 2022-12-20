@@ -1,9 +1,9 @@
 import create from 'zustand' // create로 zustand를 불러옵니다.
 
 export const useStore = create(set => ({
-  link: 'http://43.200.140.62:8000/',
-  local_link: () => set(state => ({ link: 'http://127.0.0.1:8000/'})),
-  server_link: () => set(state => ({ link: 'http://43.200.140.62:8000/'})),
+  link: 'http://43.200.140.62:8000',
+  local_link: () => set(state => ({ link: 'http://127.0.0.1:8000'})),
+  server_link: () => set(state => ({ link: 'http://43.200.140.62:8000'})),
 }))
 
 export const useBotlink = create(set => ({
